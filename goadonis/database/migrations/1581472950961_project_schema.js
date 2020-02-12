@@ -14,8 +14,8 @@ class ProjectSchema extends Schema {
             .onUpdate('CASCADE')
             .onDelete('SET NULL')
 
-      table.string('titulo').notNullable()
-      table.string('description').notNullable()
+      table.string('title').notNullable()
+      table.text('description').notNullable()
       table.timestamps()
     })
   }
