@@ -83,6 +83,8 @@ class FileController {
    * @param {View} ctx.view
    */
   async show ({ params, request, response, view }) {
+    const file = await File.findOrFail(params.id)
+    return response.download(Helpers.tmpPath(`uploads/${file.file}`))
   }
 
   /**
