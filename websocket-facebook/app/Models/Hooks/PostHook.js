@@ -15,3 +15,5 @@ PostHook.sendWs = async post => {
     topic.broadcast('new', post)
   }
 }
+
+

@@ -7,6 +7,9 @@
     $(".posts").prepend(Template.post)
   })
 
+  posts.on('likes', likes => {
+    $likes(likes)
+  })
   ajax('/posts', null, 'get').then(
     posts => {
       posts.map(post => {
@@ -27,7 +30,12 @@
       content
     })
 
+    $("body").on('click', ".like-post", async function(e) {
+      e.preventDefault();
+      const id = $(this).data('id');
+      const likes = await ajax(`/posts/${id}/likes`)
 
+    })
 
   })
 })(jQuery);
