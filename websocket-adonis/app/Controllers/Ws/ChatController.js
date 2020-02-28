@@ -15,6 +15,7 @@ class ChatController {
   // }
 
   onMessage (data) {
+    console.log(data)
     this.socket.broadcastToAll('message', data)
   }
 }
